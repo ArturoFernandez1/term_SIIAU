@@ -21,7 +21,7 @@ create_table = SQLiteScript(
 )
 
 ## extract
-@task(cache_for=datetime.timedelta(days=1), state_handlers=[alert_failed], result_handler=LocalResultHandler())
+@task(cache_for=datetime.timedelta(days=1), state_handlers=[alert_failed])
 def get_complaint_data():
     r = requests.get("https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/", params={'size':10})
     response_json = json.loads(r.text)
