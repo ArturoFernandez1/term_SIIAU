@@ -9,7 +9,7 @@ from prefect import task, Flow
 from prefect.tasks.database.sqlite import SQLiteScript
 from prefect.schedules import IntervalSchedule
 from prefect.engine import signals
-from prefect.engine.result_handlers import LocalResultHandler
+#from prefect.engine.result_handlers import LocalResultHandler
 
 def alert_failed(obj, old_state, new_state):
     if new_state.is_failed():
